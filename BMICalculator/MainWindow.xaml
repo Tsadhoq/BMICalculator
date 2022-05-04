@@ -11,6 +11,7 @@
     
     <!--styles for elements-->
     <Window.Resources>
+        <!--For Form Text-->
         <Style x:Key="form_text" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#363636"/>
             <Setter Property="FontFamily" Value="Roboto"/>
@@ -19,6 +20,7 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
 
+        <!--For Form TextBox-->
         <Style x:Key="form_input" 
                TargetType="TextBox">
             <Style.Resources>
@@ -28,8 +30,18 @@
             </Style.Resources>
         </Style>
 
-        <Style x:Key="form_buttons">
-            
+        <!--For Form Button-->
+        <Style x:Key="form_buttons" TargetType="Button">
+            <Setter Property="Background" Value="#1D3557"/>
+            <Setter Property="Foreground" Value="#F1FAEE"/>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontWeight" Value="Regular"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="2"/>
+                </Style>
+            </Style.Resources>
         </Style>
         
     </Window.Resources>
@@ -67,7 +79,7 @@
         <Border Grid.Column="1" Background="#F1FAEE">
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="300"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -92,8 +104,8 @@
                 </ComboBox>
                 <TextBox Name = "heightTxtBox" Grid.Row="2" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
                 <TextBox Name ="weightTxtBox" Grid.Row="3" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
-                <Button Name="calculateButton" Grid.Row="6" Grid.Column="1" Margin="3" Content="Reset" />
-                <Button Name="resetButton" Grid.Row="5" Grid.Column="1" Margin="3" Content="Calculate"/>
+                <Button Name="calculateButton" Grid.Row="6" Grid.Column="1" Margin="3" Content="Reset" Style="{StaticResource form_buttons}"/>
+                <Button Name="resetButton" Grid.Row="5" Grid.Column="1" Margin="3" Content="Calculate" Style="{StaticResource form_buttons}"/>
             </Grid>
         </Border>
     </Grid>
