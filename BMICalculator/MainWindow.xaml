@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="clr-namespace:BMICalculator"
         mc:Ignorable="d"
-        Title="BMI" Height="650" Width="1000"
+        Title="BMI" Height="350" Width="950"
         Background="Transparent"
         WindowStartupLocation="CenterScreen">
     
+    <!--styles for elements-->
     <Window.Resources>
         <Style x:Key="form_text" TargetType="TextBlock">
             <Setter Property="Foreground" Value="#363636"/>
@@ -17,7 +18,23 @@
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
         </Style>
+
+        <Style x:Key="form_input" 
+               TargetType="TextBox">
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="2"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style x:Key="form_buttons">
+            
+        </Style>
+        
     </Window.Resources>
+    
+    <!--Main Window-->
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="350"/>
@@ -46,6 +63,7 @@
             </StackPanel>        
         </Border>
 
+        <!--Form section-->
         <Border Grid.Column="1" Background="#F1FAEE">
             <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
                 <Grid.ColumnDefinitions>
@@ -58,8 +76,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Name" Style="{StaticResource form_text}"/>
@@ -67,12 +85,15 @@
                 <TextBlock Grid.Row="2" Text="Height (m)" Style="{StaticResource form_text}"/>
                 <TextBlock Grid.Row="3" Text="Weight (kg)" Style="{StaticResource form_text}"/>
 
-                <TextBox Grid.Column="1" Margin="3"/>
+                <!--input elements-->
+                <TextBox Name="nameTxtBox" Grid.Column="1" Margin="3" MinWidth="50" Style="{StaticResource form_input}"/>
                 <ComboBox Grid.Row="1" Grid.Column="2" Margin="3">
-                    
+
                 </ComboBox>
-                <TextBox Grid.Row="2" Grid.Column="2" Margin="3"/>
-                <TextBox Grid.Row="3" Grid.Column="2" Margin="3"/>
+                <TextBox Name = "heightTxtBox" Grid.Row="2" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
+                <TextBox Name ="weightTxtBox" Grid.Row="3" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
+                <Button Name="calculateButton" Grid.Row="6" Grid.Column="1" Margin="3" Content="Reset" />
+                <Button Name="resetButton" Grid.Row="5" Grid.Column="1" Margin="3" Content="Calculate"/>
             </Grid>
         </Border>
     </Grid>
