@@ -3,10 +3,77 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BMICalculator"
+        xmlns:fa="clr-namespace:BMICalculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="BMI" Height="650" Width="1000"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen">
+    
+    <Window.Resources>
+        <Style x:Key="form_text" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="#363636"/>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <!--Left Section-->
+        <Border Background="#1D3557" Padding="30">
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="\Images\user.png" Width="160" Height="160" Margin="0 0 0 10"/>
+                <TextBlock Text="Body Mass Index Calculator" 
+                           TextAlignment="Center" 
+                           FontWeight="SemiBold" 
+                           FontSize="23" 
+                           TextWrapping="NoWrap"
+                           Foreground="#F1FAEE" 
+                           FontFamily="Roboto"/>
+                <TextBlock TextWrapping="Wrap" 
+                           FontWeight="Regular"
+                           FontSize="16" 
+                           TextAlignment="Center" 
+                           Foreground="#E63946" 
+                           Margin="0 5 0 20"
+                           Text="Measure the weight status of your body in relation to the fat"
+                           FontFamily="Roboto"/>
+            </StackPanel>        
+        </Border>
 
+        <Border Grid.Column="1" Background="#F1FAEE">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition Width="300"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" Text="Name" Style="{StaticResource form_text}"/>
+                <TextBlock Grid.Row="1" Text="Gender" Style="{StaticResource form_text}"/>
+                <TextBlock Grid.Row="2" Text="Height (m)" Style="{StaticResource form_text}"/>
+                <TextBlock Grid.Row="3" Text="Weight (kg)" Style="{StaticResource form_text}"/>
+
+                <TextBox Grid.Column="1" Margin="3"/>
+                <ComboBox Grid.Row="1" Grid.Column="2" Margin="3">
+                    
+                </ComboBox>
+                <TextBox Grid.Row="2" Grid.Column="2" Margin="3"/>
+                <TextBox Grid.Row="3" Grid.Column="2" Margin="3"/>
+            </Grid>
+        </Border>
     </Grid>
 </Window>
