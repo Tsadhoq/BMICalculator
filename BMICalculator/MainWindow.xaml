@@ -99,7 +99,7 @@
 
                 <!--input elements-->
                 <TextBox Name="nameTxtBox" Grid.Column="1" Margin="3" MinWidth="50" Style="{StaticResource form_input}"/>
-                <ComboBox Grid.Row="1" Grid.Column="2" Margin="3" SelectedItem="Male">
+                <ComboBox Name="genderComboBox" Grid.Row="1" Grid.Column="2" Margin="3" SelectedItem="Male">
                     <ComboBoxItem Content="Male" IsSelected="True"/>
                     <ComboBoxItem Content="Female"/>
                 </ComboBox>
