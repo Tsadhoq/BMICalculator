@@ -124,7 +124,7 @@
                 <TextBox x:Name ="weightTxtBox" Grid.Row="3" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
                 <Button x:Name="calculateButton" Grid.Row="6" Grid.Column="1" Margin="3" Content="Reset" Style="{StaticResource form_buttons}" Click="calculateButton_Click"/>
                 <Button x:Name="resetButton" Grid.Row="5" Grid.Column="1" Margin="3" Content="Calculate" Style="{StaticResource form_buttons}" Click="resetButton_Click"/>
-                <Label Content="Your BMI result will be displayed here" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" Style="{StaticResource form_label}" Margin="3" Padding="10"/>
+                <Label Content="Your BMI result will be displayed here" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" Style="{StaticResource form_label}" Margin="3" Padding="10" Name ="resultLabel"/>
             </Grid>
         </Border>
     </Grid>

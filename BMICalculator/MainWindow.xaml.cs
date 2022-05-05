@@ -20,23 +20,37 @@ namespace BMICalculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        private float height, weight;
+
+        private float height, weight, bodyMassIndex;
         private string name = "";
-
-        private void resetButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void calculateButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         public MainWindow()
         {
             InitializeComponent();
 
+        }
+
+        private void resetButton_Click(object sender, RoutedEventArgs e)
+        {
+
+
+        }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+            float.TryParse((heightTxtBox.Text), out float parsedHeight);
+            float.TryParse((weightTxtBox.Text), out float parsedWeight);
+            string BMI = BMICalculation(parsedWeight, parsedHeight);
+
+            name = nameTxtBox.Text.ToString();
+
+            
+        }
+
+        public string BMICalculation(float num1, float num2)
+        {
+            bodyMassIndex = (num1) / (num2 * num2);
+            return bodyMassIndex.ToString();
         }
 
         
