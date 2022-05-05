@@ -38,13 +38,39 @@ namespace BMICalculator
 
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
-            float.TryParse((heightTxtBox.Text), out float parsedHeight);
-            float.TryParse((weightTxtBox.Text), out float parsedWeight);
+            // Taking input from user
+            if(float.TryParse((heightTxtBox.Text), out float parsedHeight))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Enter Valid height please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
+            if (float.TryParse((weightTxtBox.Text), out float parsedWeight))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Enter Valid height please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+
             string BMI = BMICalculation(parsedWeight, parsedHeight);
 
-            name = nameTxtBox.Text.ToString();
+            // Checking if name textbox is empty and assign it to a value
+            if(nameTxtBox.Text == "")
+            {
+                name = "User";
+            }
+            else
+            {
+                name = nameTxtBox.Text.ToString();
+            }
 
-            
+            // Display
+            resultLabel.Content = $"Hello {name}, your BMI is ";
         }
 
         public string BMICalculation(float num1, float num2)
