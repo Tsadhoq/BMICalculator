@@ -20,7 +20,7 @@ namespace BMICalculator
     /// </summary>
     public partial class MainWindow : Window
     {
-
+        // Fields 
         private float height, weight, bodyMassIndex;
         private string name = "";
 
@@ -30,20 +30,24 @@ namespace BMICalculator
 
         }
 
+        // Reset Button Event Handler
         private void resetButton_Click(object sender, RoutedEventArgs e)
         {
-            resultLabel.Content = "";
+            resultLabel.Content = "Your BMI result will be displayed here";
             heightTxtBox.Text = "";
             weightTxtBox.Text = "";
+            nameTxtBox.Text = "";
             bodyMassIndex = 0;
         }
 
+        // Calculate Button Event Handler
         private void calculateButton_Click(object sender, RoutedEventArgs e)
         {
+
             // Taking input from user
             if(float.TryParse((heightTxtBox.Text), out float parsedHeight))
             {
-
+                height = parsedHeight;
             }
             else
             {
@@ -52,14 +56,16 @@ namespace BMICalculator
 
             if (float.TryParse((weightTxtBox.Text), out float parsedWeight))
             {
-
+                weight = parsedWeight;
             }
             else
             {
-                MessageBox.Show("Enter Valid height please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Enter Valid weight please", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
-            float BMI = BMICalculation(parsedWeight, parsedHeight);
+
+            // Get BMI value
+            float BMI = BMICalculation(weight, height);
 
             // Using method to check condition for BMI
             string bmiState = CheckBMIClassification(BMI);
@@ -75,10 +81,10 @@ namespace BMICalculator
             }
 
             // Display
-            resultLabel.Content = $"Hello {name}, your Body Mass Index (BMI) is {BMI}.\n";
+            resultLabel.Content = $"Hello {name}! Your Body Mass Index (BMI) is {BMI}.\n";
 
             // Display condition of BMI and current state
-            resultLabel.Content = $"";
+            resultLabel.Content = $"{resultLabel.Content}\n{CheckBMIClassification(BMI)}";
         }
 
         // Methods
@@ -92,28 +98,28 @@ namespace BMICalculator
         {
             if(bmiNumber < 18.5)
             {
-                return "BMI Class: Underweight\nObesity Class: -\nDisease Risk: -\nWaist Circumference: -";
+                return "BMI Class: Underweight 😓\nObesity Class: -\nDisease Risk: -\nWaist Circumference: -";
             }
             else if(bmiNumber >= 18.5 && bmiNumber <= 24.9)
             {
-                return "BMI Class: Normal\nObesity Class: -\nDisease Risk: -\nWaist Circumference: -";
+                return "BMI Class: Normal 😊\nObesity Class: -\nDisease Risk: -\nWaist Circumference: -";
             }
             else if(bmiNumber >= 25 && bmiNumber <= 29.9)
             {
-                return "BMI Class: Overweight\nObesity Class: -\nDisease Risk: Increased\nWaist Circumference: High";
+                return "BMI Class: Overweight 😰\nObesity Class: -\nDisease Risk: Increased\nWaist Circumference: High";
             }
 
             else if (bmiNumber >= 30 && bmiNumber <= 34.9)
             {
-                return "BMI Class: Obesity\nObesity Class: 1\nDisease Risk: High\nWaist Circumference: Very High";
+                return "BMI Class: Obesity 😠\nObesity Class: 1\nDisease Risk: High\nWaist Circumference: Very High";
             }
             else if (bmiNumber >= 25 && bmiNumber <= 29.9)
             {
-                return "BMI Class: Obesity\nObesity Class: 2\nDisease Risk: Very High\nWaist Circumference: Very High";
+                return "BMI Class: Obesity 😨\nObesity Class: 2\nDisease Risk: Very High\nWaist Circumference: Very High";
             }
             else
             {
-                return "BMI Class: Extreme Obesity\nObesity Class: 3\nDisease Risk: Extremely High\nWaist Circumference: Extremely High";
+                return "BMI Class: Extreme Obesity 😱\nObesity Class: 3\nDisease Risk: Extremely High\nWaist Circumference: Extremely High";
             }
         }
 
