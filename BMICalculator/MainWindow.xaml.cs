@@ -20,11 +20,25 @@ namespace BMICalculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private float height, weight;
+        private string name = "";
+
+        private void resetButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void calculateButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
-
+        
     }
 }

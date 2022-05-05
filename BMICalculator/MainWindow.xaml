@@ -18,6 +18,7 @@
             <Setter Property="FontWeight" Value="SemiBold"/>
             <Setter Property="FontSize" Value="16"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="2 0 0 0"/>
         </Style>
 
         <!--For Form TextBox-->
@@ -37,6 +38,20 @@
             <Setter Property="FontFamily" Value="Roboto"/>
             <Setter Property="FontWeight" Value="Regular"/>
             <Setter Property="FontSize" Value="13"/>
+            <Style.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="2"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+        
+        <!--Label style-->
+        <Style x:Key="form_label" TargetType="Label">
+            <Setter Property="Background" Value="#1D3557"/>
+            <Setter Property="Foreground" Value="#F1FAEE"/>
+            <Setter Property="FontFamily" Value="Roboto"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontSize" Value="10"/>
             <Style.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="2"/>
@@ -77,7 +92,7 @@
 
         <!--Form section-->
         <Border Grid.Column="1" Background="#F1FAEE">
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 10 0 0">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 30 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="130"/>
                     <ColumnDefinition Width="300"/>
@@ -90,6 +105,8 @@
                     <RowDefinition Height="5"/>
                     <RowDefinition Height="30"/>
                     <RowDefinition Height="30"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="80"/>
                 </Grid.RowDefinitions>
 
                 <TextBlock Grid.Row="0" Text="Name" Style="{StaticResource form_text}"/>
@@ -98,15 +115,16 @@
                 <TextBlock Grid.Row="3" Text="Weight (kg)" Style="{StaticResource form_text}"/>
 
                 <!--input elements-->
-                <TextBox Name="nameTxtBox" Grid.Column="1" Margin="3" MinWidth="50" Style="{StaticResource form_input}"/>
-                <ComboBox Name="genderComboBox" Grid.Row="1" Grid.Column="2" Margin="3" SelectedItem="Male">
+                <TextBox x:Name="nameTxtBox" Grid.Column="1" Margin="3" MinWidth="50" Style="{StaticResource form_input}"/>
+                <ComboBox x:Name="genderComboBox" Grid.Row="1" Grid.Column="2" Margin="3" SelectedItem="Male">
                     <ComboBoxItem Content="Male" IsSelected="True"/>
                     <ComboBoxItem Content="Female"/>
                 </ComboBox>
-                <TextBox Name = "heightTxtBox" Grid.Row="2" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
-                <TextBox Name ="weightTxtBox" Grid.Row="3" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
-                <Button Name="calculateButton" Grid.Row="6" Grid.Column="1" Margin="3" Content="Reset" Style="{StaticResource form_buttons}"/>
-                <Button Name="resetButton" Grid.Row="5" Grid.Column="1" Margin="3" Content="Calculate" Style="{StaticResource form_buttons}"/>
+                <TextBox x:Name = "heightTxtBox" Grid.Row="2" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
+                <TextBox x:Name ="weightTxtBox" Grid.Row="3" Grid.Column="2" Margin="3" Style="{StaticResource form_input}"/>
+                <Button x:Name="calculateButton" Grid.Row="6" Grid.Column="1" Margin="3" Content="Reset" Style="{StaticResource form_buttons}" Click="calculateButton_Click"/>
+                <Button x:Name="resetButton" Grid.Row="5" Grid.Column="1" Margin="3" Content="Calculate" Style="{StaticResource form_buttons}" Click="resetButton_Click"/>
+                <Label Content="Your BMI result will be displayed here" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="8" Style="{StaticResource form_label}" Margin="3" Padding="10"/>
             </Grid>
         </Border>
     </Grid>
