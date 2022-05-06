@@ -20,7 +20,7 @@ To run this application, you will need to clone this repository and build the pr
 - When the calculate button is clicked, the user's BMI is calculated and display in the Label content below.
 - The reset button takes the application back to its default state.
 
-### Limitations
+### Limitation
 - BMI is not always an accurate measure of health because it cannot account for the difference between muscle and fat.
 
 ### Sources
