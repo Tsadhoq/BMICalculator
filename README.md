@@ -1,4 +1,5 @@
 # BMICalculator
+### Introduction
 A simple Body Mass Index (BMI) calculator that uses your height and weight to check if your weight is healthy. The target framework of this WPF application is .NET 6.
 
 
