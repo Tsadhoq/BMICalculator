@@ -1,3 +1,4 @@
 BMICalculator
 
-![PolyBMI](https://user-images.githubusercontent.com/65626254/167085901-ba89c379-c088-4323-9ca8-7b8d333fd799.gif)
+
+![BMI 2022-05-06 08-15-03](https://user-images.githubusercontent.com/65626254/167086218-a849ee5d-c817-4e59-b478-f491942f0a52.gif)
