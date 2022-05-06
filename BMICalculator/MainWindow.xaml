@@ -49,10 +49,10 @@
         <!--Label style-->
         <Style x:Key="form_label" TargetType="Label">
             <Setter Property="Background" Value="#1D3557"/>
-            <Setter Property="Foreground" Value="#E63946" />
+            <Setter Property="Foreground" Value="#F1FAEE"  />
             <Setter Property="FontFamily" Value="Roboto"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="Light"/>
+            <Setter Property="FontSize" Value="12"/>
             <Style.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="2"/>
@@ -92,7 +92,7 @@
         </Border>
 
         <!--Form section-->
-        <Border Grid.Column="1" Background="#F1FAEE">
+        <Border Grid.Column="1" Background="#F1FAEE" >
             <Grid HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 30 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="130"/>
