@@ -25,7 +25,6 @@ To run this application, you will need to clone this repository and build the pr
 
 ### Sources
 - <sub>https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi_dis.htm</sub>
-\
 - <sub>https://www.medindia.net/doctors/clinical_cal/bmi.asp</sub>
 
 
