@@ -17,7 +17,7 @@ To run this application, you will need to clone this repository and build the pr
 
 ### Features
 - Gets inputs of user's name, gender, height and weight. A MessageBox will pop-up when an invalid input is made for either the height TextBox or the weight TextBox or both.
-- When the calculate button is clicked, the user's BMI is calculated and display in the Label content below.
+- When the calculate button is clicked, the user's BMI is calculated and displayed in the Label content below.
 - The reset button takes the application back to its default state.
 
 ### Limitation
