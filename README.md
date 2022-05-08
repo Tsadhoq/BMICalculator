@@ -24,8 +24,9 @@ To run this application, you will need to clone this repository and build the pr
 - BMI is not always an accurate measure of health because it cannot account for the difference between muscle and fat.
 
 ### Sources
-<sub>- https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi_dis.htm</sub>
-<sub>- https://www.medindia.net/doctors/clinical_cal/bmi.asp</sub>
+<sub>https://www.nhlbi.nih.gov/health/educational/lose_wt/BMI/bmi_dis.htm</sub>
+\
+<sub>https://www.medindia.net/doctors/clinical_cal/bmi.asp</sub>
 
 
 
