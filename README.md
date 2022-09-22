@@ -9,7 +9,6 @@ A simple Body Mass Index (BMI) calculator that uses your height and weight to ch
 This application is created with:
 - .NET 6.0
 - C#
-- XAML
 - WPF
 
 ### Setup
